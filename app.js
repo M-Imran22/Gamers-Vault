@@ -3,7 +3,6 @@ const app = express();
 const db = require("./models");
 const path = require("path");
 const ejsMate = require("ejs-mate");
-
 const { Inventory, Admin } = require("./models");
 
 app.set("view engine", "ejs");
@@ -13,10 +12,14 @@ app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/inventory", (req, res, next) => {
-  res.render("inventory/inventory.ejs");
+  res.render("inventory/index.ejs");
 });
 
-app.post("/inventory/new", (req, res) => {
+app.get("/inventory/newItem", (req, res) => {
+  res.render("inventory/new.ejs");
+});
+
+app.post("/inventory/addItem", (req, res) => {
   const { itemTitle, quantity, marketPrice, costPrice, margin, inventoryType } =
     req.body;
 

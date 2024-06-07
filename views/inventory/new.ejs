@@ -1,0 +1,53 @@
+<%- layout("layouts/boilerplats") %>
+
+<div class="row mt-2 offset-2">
+  <h2>Add New Product</h2>
+  <form method="POST" action="/inventory/addItem" class="mt-5">
+    <div class="col-10">
+      <label for="itemTitle" class="form-label">Product Title</label>
+      <input type="text" class="form-control" id="itemTitle" name="itemTitle" />
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <label for="quantity" class="form-label">Quantity</label>
+        <input
+          type="number"
+          class="form-control"
+          id="quantity"
+          name="quantity"
+        />
+      </div>
+      <div class="col-4">
+        <label for="inventoryType" class="form-label">Type</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inventoryType"
+          name="inventoryType"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <label for="marketPrice" class="form-label">Market Price</label>
+        <input
+          type="number"
+          class="form-control"
+          id="marketPrice"
+          name="marketPrice"
+        />
+      </div>
+      <div class="col-4">
+        <label for="costPrice" class="form-label">Cost Price</label>
+        <input
+          type="number"
+          class="form-control"
+          id="costPrice"
+          name="costPrice"
+        />
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-dark mt-5">Add Item</button>
+  </form>
+</div>
